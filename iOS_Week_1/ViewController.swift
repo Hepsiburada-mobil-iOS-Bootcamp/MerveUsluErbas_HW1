@@ -26,9 +26,18 @@ class ViewController: UIViewController {
     @IBAction func basicsTest(_ sender: Any) {
         // please provide a couple of sample functionality for class, struct and enum use cases by creating your own modules. We provide you some sample class, enum and struct please provide your own.
         // The code below is just sample
-        let structObj = SampleStruct(title: "title", subTitle: "subTitle")
-        let classObj = SampleClass(name: "name", surName: "surname").setTitleObject(by: structObj)
-        classObj.display()
+//        let structObj = SampleStruct(title: "title", subTitle: "subTitle")
+//        let classObj = SampleClass(name: "name", surName: "surname").setTitleObject(by: structObj)
+//        classObj.display()
+//        
+        
+        
+        let hepsiBurada = CompanyClass(name: "HepsiBurada", foundationYear: 2000, type: CompanyEnum.ECommercial)
+        let employeeList : [EmployeeStruct] = [EmployeeStruct(name: "Merve", surname: "Uslu Erbaş", age: 28) , EmployeeStruct(name: "X", surname: "Y", age: 25), EmployeeStruct(name: "Z", surname: "W", age: 30)]
+        
+        hepsiBurada.setEmployeeList(by: employeeList)
+        hepsiBurada.display()
+        
     }
 
     
