@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Enum for the type of company.
 enum CompanyEnum {
     
     case Design

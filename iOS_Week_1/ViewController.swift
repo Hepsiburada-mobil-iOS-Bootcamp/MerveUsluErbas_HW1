@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 //        classObj.display()
 //        
         
-        
+        // hepsiBurada object is created by CompanyClass
         let hepsiBurada = CompanyClass(name: "HepsiBurada", foundationYear: 2000, type: CompanyEnum.ECommercial)
         let employeeList : [EmployeeStruct] = [EmployeeStruct(name: "Merve", surname: "Uslu Erbaş", age: 28) , EmployeeStruct(name: "X", surname: "Y", age: 25), EmployeeStruct(name: "Z", surname: "W", age: 30)]
         

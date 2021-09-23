@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Employee Struct which holds employee information.
 struct EmployeeStruct {
     let name: String
     let surname: String
