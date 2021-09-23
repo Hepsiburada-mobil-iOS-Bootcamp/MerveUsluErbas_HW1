@@ -196,11 +196,35 @@ class AlgorithmManager: AlgorithmProtocol {
      */
     func arrayIntersectionTest() {
         
+        let array1 = [1,2,3,4,5,3]
+        let array2 = [10,3,0,3,1]
+        
+        
+        print("Intersection of '\(array1)' and '\(array2)' is \(intersect(array1, array2)).")
+        
     }
     
-//    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-//
-//    }
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        
+        var intersectionArray : [Int] = []
+        var controlDictionary : [Int:Int] = [:]
+        
+        for n1 in nums1 {
+            if controlDictionary[n1] != nil {
+                controlDictionary[n1]! += 1
+            } else {
+                controlDictionary[n1] = 1
+            }
+        }
+        
+        for n2 in nums2 {
+            if controlDictionary[n2] != nil && controlDictionary[n2] != 0 {
+                controlDictionary[n2]! -= 1
+                intersectionArray.append(n2)
+            }
+        }
+        return intersectionArray
+    }
     
     // MARK: - Missing Number
     /*
