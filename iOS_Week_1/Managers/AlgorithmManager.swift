@@ -236,15 +236,18 @@ class AlgorithmManager: AlgorithmProtocol {
 
      */
     func missingNumberTest() {
-        
+        let missingArray = [0,3,2,4,1,6,7,8,9]
+        print("The Missing Number in '\(missingArray)' is \(missingNumber(missingArray)).")
     }
     
-//    private func missingNumber(_ nums: [Int]) -> Int {
-//
-//    }
-    
+    private func missingNumber(_ nums: [Int]) -> Int {
+            let sumNumber = (nums.count) * (nums.count + 1)/2
+            let sumOfArray = nums.reduce(0, +)
+            return sumNumber - sumOfArray
+        }
     
 }
+    
 
 // Get character with index
 extension StringProtocol {
