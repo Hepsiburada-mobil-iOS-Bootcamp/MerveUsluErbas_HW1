@@ -145,12 +145,27 @@ class AlgorithmManager: AlgorithmProtocol {
      Output: false
      */
     func duplicateTest() {
+        let array1 = [1,2,3,4,5,3]
+        let array2 = [10,100,1000]
+        print("First Example: Does '\(array1)' have duplicate elements? Answer is \(containsDuplicate(array1)).")
+        print("Second Example: Does '\(array2)' have duplicate elements? Answer is \(containsDuplicate(array2)).")
         
     }
     
-//    func containsDuplicate(_ nums: [Int]) -> Bool {
-//            
-//    }
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+        
+        var numSet : Set<Int> = []
+        
+        for n in nums {
+            if numSet.contains(n) {
+                return true
+            }else {
+                numSet.insert(n)
+            }
+        }
+        return false
+    }
+
     
     // MARK: - Merge Sorted Array
     /*
