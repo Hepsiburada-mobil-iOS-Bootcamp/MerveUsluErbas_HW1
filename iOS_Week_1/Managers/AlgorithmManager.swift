@@ -100,12 +100,41 @@ class AlgorithmManager: AlgorithmProtocol {
      Output: true
      */
     func isAnagramTest() {
-        
+        let s = "Thing"
+        let t = "Night"
+        let s2 = "Triangle"
+        let t2 = "Integrel"
+        print("First Example: Is '\(s)' and '\(t)' Anagram? Answer is \(isAnagram(s, t)).")
+        print("Second Example: Is '\(s2)' and '\(t2)' Anagram? Answer is \(isAnagram(s2, t2)).")
     }
     
-//    func isAnagram(_ s: String, _ t: String) -> Bool {
-//
-//    }
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        
+        // If the size of strings are not equal, result is false.
+        if s.count != t.count {
+            
+            return false
+        }
+        // Dictionary holds the letters with counts.
+        var letterDictionary : [Character:Int] = [:]
+        // Filling the dictionary with letters of s.
+        for c in s.lowercased() {
+            if letterDictionary[c] != nil {
+                letterDictionary[c]! += 1
+            } else {
+                letterDictionary[c] = 1
+            }
+        }
+        // Checking letters of t with letters of s.
+        for c in t.lowercased() {
+            if letterDictionary[c] == nil || letterDictionary[c] == 0 {
+                return false
+            } else {
+                letterDictionary[c]! -= 1
+            }
+        }
+        return true
+    }
     
     // MARK: - Contains Duplicate
     /*
