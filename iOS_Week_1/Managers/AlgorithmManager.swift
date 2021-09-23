@@ -58,12 +58,40 @@ class AlgorithmManager: AlgorithmProtocol {
      Explanation: "amanaplanacanalpanama" is a palindrome.
      */
     func isPalindromTest() {
-        
+        let string = "A man, a plan, a canal: Panama"
+        let string2 = "Was it a cat I sew?"
+        print("First Example: Is '\(string)' Palindrome? Answer is \(isPalindrome(string)).")
+        print("Second Example: Is '\(string2)' Palindrome? Answer is \(isPalindrome(string2)).")
     }
     
-//    func isPalindrome(_ s: String) -> Bool {
-//
-//    }
+  
+        
+    func isPalindrome(_ s: String) -> Bool {
+        
+        var head = 0
+        var tail = s.count - 1
+        
+        //Head and tail approach is implemented to solve algorithm.
+        
+        while head < tail {
+            //Checking characters
+            if !s[head].isLetter && !s[head].isNumber {
+                head += 1
+                continue
+            }
+            if !s[tail].isLetter && !s[tail].isNumber {
+                tail -= 1
+                continue
+            }
+            if s[head].lowercased() != s[tail].lowercased() {
+                return false
+            } else {
+                head += 1
+                tail -= 1
+            }
+        }
+        return true
+    }
     
     // MARK: - Valid Anagram
     /*
@@ -148,4 +176,11 @@ class AlgorithmManager: AlgorithmProtocol {
 //    }
     
     
+}
+
+// Get character with index
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
 }
