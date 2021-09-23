@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlgoruthmManager: AlgorithmProtocol {
+class AlgorithmManager: AlgorithmProtocol {
     
     // MARK: - Two Sum
     /*
@@ -23,12 +23,31 @@ class AlgoruthmManager: AlgorithmProtocol {
         let nums = [2,7,11,15]
         let target = 9
         let result = twoSum(nums, target)
-        print("result : \(result)")
+        print("First Example : For \(nums) array and target : \(target), result indices : \(result)")
+        print("Second Example : For \([1,5,4,3,6]) array and target : \(7), result indices : \(twoSum([1,5,4,3,6], 7))")
     }
     
     private func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         // I solved of the question for you guys :D :D :D
-        return [0, 1]
+        
+        // Remaining Values are stored in remainingValueDict dictionary with indices.
+        var remainingValueDict : [Int:Int] = [:]
+
+        for i in 0...nums.count-1 {
+            // If remaining value exist in dictionary, return result.
+            if let remainingIndex = remainingValueDict[nums[i]] {
+                
+                return [remainingIndex, i]
+            }
+            // Unless remaining value exist in dictionary, add remaining value to dictionary.
+            else {
+                remainingValueDict[target - nums[i]] = i
+            }
+        
+        }
+        
+        // This code never return this array
+        return [-1,-1]
     }
     
     // MARK: - IsPalindrome
